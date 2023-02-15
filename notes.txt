@@ -1,0 +1,99 @@
+special-heading------>يعتبر مكون اساسي في كل الاقسام ف نعمله كا main component
+---------------------------------------
+overlay: الطبقه السوده علي الصور
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+left:0;
+right:0;
+backgroung-color:rgb(0 0 0 / 50%);
+---------------------------------------
+section services by grid:
+@media (min-width:768px){ ----> فوق ال 768
+.services .container .row .col{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(450px,1fr));
+grid-column-gap:40px------>جاب من بين الاعمده
+grid-row-gap:60px--------.جاب من بين الصفوف
+}
+-------------------------------------------
+section design
+اضافه الايكون بتاعت الكمبيوتر 
+
+font-family:"Font Awesome 5 Free";---->عشان الايكون تبان
+content:"\f108";
+font-weight:900px;
+margin-right:20px;
+-------------------------------------------
+section portflio
+الجزء بتاع الصور والكلام
+display:flex;
+flex-wrap:wrap;------->عشان لو المحتوي كبر ينزل تحت
+----------
+محتاج الصوره والكلام في الشاشات الكبيره تكون flex-basis:25%;
+يعني 4 صور ف الشاشه
+min-width:1199px
+-----------
+min-width:768px
+بعد الموبايل هيبقي 2 ف الشاشه	
+flex-basis:50%
+عشان ال flex-basis تشتغل لازم نحط ال box ---->max-width:100%;
+----------------
+الكلام فوق الصوره بال position:relative;
+عشان الكلام يختفي نحط ال bottom:-100px;
+نظهر الكلام بال hover عن طريق bottom:0;
+--------------------------------------------
+section vedio
+video----->autoplay,muted,loop
+--------------------------------------------
+section about
+لكي نخفي جزء من الصوره عن طريق bottom:-120px;
+وجعل المسافه تحت ال header متساويه يتطلب margin-top:-120px;
+ونحط في ال div الكبير overflow:hidden;
+---------------------------------------------
+static section:
+flex-basis use to break the element in page
+in mobile screen-----> max-width:767px----->flex-basis:100%;
+in medium screen------->min-width:768px;------->flex-basis:50%;
+in large screen------->min-width:991px;------->flex-basis:25%;
+-------------------------------------------------
+our skills section:
+<span style="width:90%" data-progress="90%"></span>---->الجزء اللي هيملي المستطيل
+هنا كتبنا ال style inline لان القيم ال static بيبقي ليك الصلاحيه انك تعدل عليها في ال html ولاكن ليس لديك الصلاحيه ان تعدل عليها في ال ملف css.
+data-progress------>put value above box.
+كتبناها جوه العنصر في ال html لان هنا لينا الصلاحيه في التعديل انما ملناش الصلاحيه في التعديل في ملف css.
+--------------------------------------------------
+our skills section in css
+.our-skills .container > div ----------> direct child(div testimonails,div skills).
+------------------------
+prog div
+النسب اللي فوق عملناها بال after , before
+
+-------------------------------------------------
+price section
+.pricing .plan ul li:not(:last-child)::after
+كل عناصر ال li ماعدا العنصر الاخير
+--------------------------------------------------
+subscrib section
+عشان نخلي ال button جوه input---------> 
+input-----> width:calc(100% - 130px);
+button--->width:130px;
+----------------------------
+عشان نخلي ال icon جوه ال input 
+form--->position:relative;
+icon----->position:absolute;
+-------------------------------------------------
+contact section
+h4:nth-of-type(2)-----> الوصول لل second h4
+-------------------
+.contact .container .content form{
+flex-basis: 70%;
+}
+عشان الفورم تأخد مكان 70%
+ونكبر ال input في المساحه دي عن طريق width:100%;
+------------------
+.contact .container .content .adds{
+    flex-basis: 25%;
+}
+الكلام اللي جنب الفورم هيأخد المساحه دي
